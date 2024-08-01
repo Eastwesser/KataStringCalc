@@ -10,3 +10,7 @@ To run:
 ```go
 go run cmd/main.go
 ```
+For tests:
+```go
+go test ./...
+```
