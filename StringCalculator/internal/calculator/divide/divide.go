@@ -1,24 +1,40 @@
 package divide
 
+// Пакет divide содержит функции для деления строк
+
 import (
 	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
 	"strconv"
 )
 
+/*
+trim для обрезки строк
+strconv для преобразования строк в числа
+*/
+
 // Divide Делит первую строку на указанное количество частей и вызывает trimStringsAfter40.
-func Divide(a, b string) string {
-	n, err := strconv.Atoi(b)
+func Divide(stringOne, stringTwo string) string {
+	// Преобразуем строку b в целое число n
+	n, err := strconv.Atoi(stringTwo)
+
+	// Проверяем, возникла ли ошибка при преобразовании
 	if err != nil {
+		// Если ошибка есть, вызываем панику с сообщением о некорректном числе для деления
 		panic("Некорректное число для деления")
 	}
 
+	// Проверяем, находится ли n в диапазоне от 1 до 10
 	if n < 1 || n > 10 {
+		// Если n вне допустимого диапазона, вызываем панику с сообщением о некорректном числе для деления
 		panic("Некорректное число для деления")
 	}
 
-	if len(a) < n {
+	// Проверяем, если длина строки a меньше, чем n
+	if len(stringOne) < n {
+		// Если да, возвращаем пустую строку, так как делить не на что
 		return ""
 	}
 
-	return trim.TrimStringsAfter40(a[:len(a)/n])
+	// Делим строку a на n частей, обрезаем первую часть до 40 символов и возвращаем
+	return trim.TrimStringsAfter40(stringOne[:len(stringOne)/n])
 }

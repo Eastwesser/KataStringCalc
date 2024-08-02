@@ -3,15 +3,21 @@ package multiply
 // Пакет multiply содержит функции для умножения строк
 
 import (
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim" // Импортируем пакет trim для обрезки строк
-	"strconv"                                                       // Импортируем пакет strconv для преобразования строк в числа
-	"strings"                                                       // Импортируем пакет strings для работы со строками
+	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
+	"strconv"
+	"strings"
 )
 
+/*
+trim для обрезки строк
+strconv для преобразования строк в числа
+strings для работы со строками
+*/
+
 // Multiply Повторяет первую строку указанное количество раз и вызывает trimStringsAfter40.
-func Multiply(a, b string) string {
+func Multiply(stringOne, stringTwo string) string {
 	// Преобразуем строку b в целое число n
-	n, err := strconv.Atoi(b)
+	n, err := strconv.Atoi(stringTwo)
 
 	// Проверяем, возникла ли ошибка при преобразовании
 	if err != nil {
@@ -25,6 +31,6 @@ func Multiply(a, b string) string {
 		panic("Некорректное число для умножения")
 	}
 
-	// Повторяем строку a n раз, обрезаем результат до 40 символов и возвращаем
-	return trim.TrimStringsAfter40(strings.Repeat(a, n))
+	// Повторяем строку stringOne n раз, обрезаем результат до 40 символов и возвращаем
+	return trim.TrimStringsAfter40(strings.Repeat(stringOne, n))
 }

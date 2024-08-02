@@ -1,17 +1,40 @@
 package subtract
 
+// Пакет subtract содержит функции для вычитания строк
+
 import (
 	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
 	"strings"
 )
 
+/*
+trim для обрезки строк
+strings для работы со строками
+*/
+
 // Subtract Удаляет все вхождения второй строки из первой и вызывает trimStringsAfter40.
-func Subtract(a, b string) string {
-	// Проверяем, содержит ли строка a строку b
-	if !strings.Contains(a, b) {
-		// Если строка a не содержит строку b, обрезаем строку a до 40 символов и возвращаем её
-		return trim.TrimStringsAfter40(a)
+func Subtract(stringOne, stringTwo string) string {
+	/*
+		Проверяем, содержит ли строка stringOne строку stringTwo с помощью функции strings.Contains
+		Если строка stringOne не содержит строку stringTwo, функция вернет false
+	*/
+	if !strings.Contains(stringOne, stringTwo) {
+		/*
+			Если строка stringOne не содержит строку stringTwo,
+			обрезаем строку stringOne до 40 символов с помощью функции trim.TrimStringsAfter40
+			и возвращаем обрезанную строку
+		*/
+		return trim.TrimStringsAfter40(stringOne)
 	}
-	// Если строка a содержит строку b, удаляем все вхождения строки b из строки a
-	return trim.TrimStringsAfter40(strings.ReplaceAll(a, b, ""))
+
+	/*
+		Если строка stringOne содержит строку stringTwo,
+		удаляем все вхождения строки stringTwo из строки stringOne с помощью функции strings.ReplaceAll:
+
+		Первый аргумент - строка, в которой производится замена
+		Второй аргумент - подстрока для поиска
+		Третий аргумент - подстрока для замены (в данном случае пустая строка для удаления)
+		Результат обрезается до 40 символов с помощью trim.TrimStringsAfter40 и возвращается
+	*/
+	return trim.TrimStringsAfter40(strings.ReplaceAll(stringOne, stringTwo, ""))
 }
