@@ -10,7 +10,7 @@ To run:
 ```go
 go run cmd/main.go
 ```
-For tests:
+For tests enter the 'calculator' directory and run this:
 ```go
 go test ./...
 ```
