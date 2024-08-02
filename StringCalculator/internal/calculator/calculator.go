@@ -13,7 +13,7 @@ func Calculate(input string) string {
 	// Удаляем пробелы
 	input = strings.TrimSpace(input)
 	// Разделяем строку на части
-	parts := strings.Fields(input)
+	parts := strings.Split(input, " ")
 
 	// Если операндов больше двух, выводим панику
 	if len(parts) != 3 {

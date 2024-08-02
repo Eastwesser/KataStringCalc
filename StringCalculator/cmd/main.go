@@ -1,24 +1,28 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"github.com/Eastwesser/KataStringCalc/internal/calculator"
+	"os"
+	"strings"
 )
 
 func main() {
-	// Объявляем переменную input для хранения пользовательского ввода
-	var input string
+	// Создаем новый сканер для считывания ввода
+	scanner := bufio.NewScanner(os.Stdin)
 
 	// Запрос ввода от пользователя
 	fmt.Print("Введите выражение: ")
 
-	// Считываем ввод пользователя и сохраняем его в переменную input
-	_, err := fmt.Scanln(&input) // Считываем ввод пользователя и сохраняем его в переменную input
+	// Считываем всю строку ввода
+	scanner.Scan()
+	input := scanner.Text()
 
-	// Проверяем, произошла ли ошибка при считывании ввода
-	if err != nil {
-		// Если ошибка есть, вызываем панику с сообщением об ошибке
-		panic("Ошибка! Введите валидное выражение!!!")
+	// Проверяем, что ввод не пустой и содержит хотя бы один пробел
+	if strings.TrimSpace(input) == "" || !strings.Contains(input, " ") {
+		fmt.Println("Ошибка! Введите валидное выражение!!!")
+		return
 	}
 
 	// Вызываем функцию Calculate из пакета calculator с введенным выражением
