@@ -38,29 +38,29 @@ func Calculate(input string) string {
 	}
 }
 
-// add Складывает две строки и вызывает truncate.
+// add Складывает две строки и вызывает trimStringsAfter40.
 func add(a, b string) string {
-	return truncate(a + b)
+	return trimStringsAfter40(a + b)
 }
 
-// subtract Удаляет все вхождения второй строки из первой и вызывает truncate.
+// subtract Удаляет все вхождения второй строки из первой и вызывает trimStringsAfter40.
 func subtract(a, b string) string {
 	if !strings.Contains(a, b) {
-		return truncate(a)
+		return trimStringsAfter40(a)
 	}
-	return truncate(strings.ReplaceAll(a, b, ""))
+	return trimStringsAfter40(strings.ReplaceAll(a, b, ""))
 }
 
-// multiply Повторяет первую строку указанное количество раз и вызывает truncate.
+// multiply Повторяет первую строку указанное количество раз и вызывает trimStringsAfter40.
 func multiply(a, b string) string {
 	n, err := strconv.Atoi(b)
 	if err != nil || n < 1 || n > 10 {
 		panic("Некорректное число для умножения")
 	}
-	return truncate(strings.Repeat(a, n))
+	return trimStringsAfter40(strings.Repeat(a, n))
 }
 
-// divide Делит первую строку на указанное количество частей и вызывает truncate.
+// divide Делит первую строку на указанное количество частей и вызывает trimStringsAfter40.
 func divide(a, b string) string {
 	n, err := strconv.Atoi(b)
 	if err != nil || n < 1 || n > 10 {
@@ -69,11 +69,11 @@ func divide(a, b string) string {
 	if len(a) < n {
 		return ""
 	}
-	return truncate(a[:len(a)/n])
+	return trimStringsAfter40(a[:len(a)/n])
 }
 
-// Если строка длиннее 40 символов, truncate обрезает её до 40 символов и добавляет '...'
-func truncate(s string) string {
+// Если строка длиннее 40 символов, trimStringsAfter40 обрезает её до 40 символов и добавляет '...'
+func trimStringsAfter40(s string) string {
 	if len(s) > 40 {
 		return s[:40] + "..."
 	}
