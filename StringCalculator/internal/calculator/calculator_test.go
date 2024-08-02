@@ -24,9 +24,7 @@ func TestCalculateNoPanic(t *testing.T) {
 }
 
 func TestMain(m *testing.M) {
-	// Выполните тесты
 	code := m.Run()
 
-	// Выполнение завершено, завершение программы
 	os.Exit(code)
 }
