@@ -5,7 +5,6 @@ import (
 	"github.com/Eastwesser/KataStringCalc/internal/calculator/divide"
 	"github.com/Eastwesser/KataStringCalc/internal/calculator/multiply"
 	"github.com/Eastwesser/KataStringCalc/internal/calculator/subtract"
-	"strconv"
 	"strings"
 )
 
@@ -29,22 +28,19 @@ func Calculate(input string) string {
 	}
 
 	switch operator {
+
 	case "+":
 		return add.Add(str1, str2)
+
 	case "-":
 		return subtract.Subtract(str1, str2)
+
 	case "*":
-		n, err := strconv.Atoi(str2)
-		if err != nil || n < 1 || n > 10 {
-			panic("Некорректное число для умножения")
-		}
 		return multiply.Multiply(str1, str2)
+
 	case "/":
-		n, err := strconv.Atoi(str2)
-		if err != nil || n < 1 || n > 10 {
-			panic("Некорректное число для деления")
-		}
 		return divide.Divide(str1, str2)
+
 	default:
 		panic("Недопустимая операция")
 	}
