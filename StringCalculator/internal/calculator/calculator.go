@@ -1,10 +1,10 @@
 package calculator
 
 import (
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/add"
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/divide"
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/multiply"
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/subtract"
+	"KataStringCalc/internal/calculator/add"
+	"KataStringCalc/internal/calculator/divide"
+	"KataStringCalc/internal/calculator/multiply"
+	"KataStringCalc/internal/calculator/subtract"
 	"strings"
 )
 

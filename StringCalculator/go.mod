@@ -1,4 +1,4 @@
-module github.com/Eastwesser/KataStringCalc
+module KataStringCalc
 
 go 1.22
 

@@ -1,7 +1,7 @@
 package multiply
 
 import (
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
+	"KataStringCalc/internal/calculator/trim"
 	"strconv"
 	"strings"
 )

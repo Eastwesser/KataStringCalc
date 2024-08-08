@@ -1,9 +1,9 @@
 package main
 
 import (
+	"KataStringCalc/internal/calculator"
 	"bufio"
 	"fmt"
-	"github.com/Eastwesser/KataStringCalc/internal/calculator"
 	"os"
 	"strings"
 )

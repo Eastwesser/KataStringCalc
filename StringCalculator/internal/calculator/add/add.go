@@ -1,7 +1,7 @@
 package add
 
 import (
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
+	"KataStringCalc/internal/calculator/trim"
 )
 
 func Add(stringOne, stringTwo string) string {

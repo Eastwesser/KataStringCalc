@@ -1,7 +1,7 @@
 package subtract
 
 import (
-	"github.com/Eastwesser/KataStringCalc/internal/calculator/trim"
+	"KataStringCalc/internal/calculator/trim"
 	"strings"
 )
 
